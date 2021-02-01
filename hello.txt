@@ -1,3 +1,4 @@
-hello world
-300 gubiley
-its okey
+<?php
+p = 21;
+echo (p)
+?>
