@@ -1,4 +1,1 @@
-<?php
-p = 21;
-echo (p)
-?>
+8.0.1-cli-buster
