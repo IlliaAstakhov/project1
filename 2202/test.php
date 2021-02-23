@@ -14,7 +14,7 @@ $menu = [
 foreach ($menu as $value){
     if (is_array($value)){
         foreach ($value as $key => $value1) {
-            echo "[{$value}] ==> $value1";
+            echo "[$key] ==> $value1";
         }
         echo '<br>';
         continue;
