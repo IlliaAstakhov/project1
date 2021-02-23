@@ -1,3 +1,6 @@
 <?php
-
-var_dump('Hello_world');
+$massive = [
+    'teacher' => 'Dmitro',
+    'School' => 'Skillup',
+];
+var_dump($massive);
