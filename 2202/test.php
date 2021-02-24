@@ -39,19 +39,3 @@ foreach ($menu as $key => $value){
     echo "</ul>";
 }
 ?>
-<nav class="one">
-    <h2>1. li {display: inline;}</h2>
-    <ul>
-        <li><a href="#"><i class="fa fa-home fa-fw"></i>Home</a></li>
-        <li><a href="#">Work</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</nav>
-<ul class="menu-main">
-    <li><a href="" class="current">Work</a></li>
-    <li><a href="">About</a></li>
-    <li><a href="">Blog</a></li>
-    <li><a href="">Contact</a></li>
-</ul>
