@@ -1,4 +1,9 @@
-
+<?php
+$storage = __DIR__ . '/storage';
+$userDir = $_GET['rout'] ?? '';
+$dir = "{$storage}/{$userDir}";
+$routs = scandir($dir);
+?>
 <!doctype html>
 <html lang="en" class="h-100">
 <head>
@@ -6,7 +11,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Контактная форма</title>
+    <title>Файловый менеджер</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
           crossorigin="anonymous">
@@ -41,10 +46,10 @@
 <body class="d-flex flex-column h-100">
 
 <!-- Begin page content -->
-<main>
+<main class="flex-shrink-0">
     <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Always expand</a>
+            <a class="navbar-brand" href="/my-site/index.php">Astakhov & Company</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -59,11 +64,28 @@
                     </li>
                 </ul>
                 <form>
-                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    <input class="form-control" type="text" placeholder="Doesn't work yet" aria-label="Search">
                 </form>
             </div>
         </div>
     </nav>
+    <div class="container">
+        <form action="create-dir.php" method="post">
+            <input type="hidden" name="dir" value="<?=
+            $userDir ?>">
+            <div class="row">
+                <div class="col-8">
+                    <input type="text" name="directoryName" class="form-control" placeholder="name directory">
+                </div>
+                <button type="submit" class="btn btn-info col-4">Create Directory</button>
+            </div>
+
+        </form>
+        <?php foreach ($routs as $rout) : ?>
+        <li><a href="index.php?rout=<?= $rout ?>"><?=$rout ?></a></li>
+        <?php endforeach; ?>
+    </div>
+
 </main>
 
 <footer class="footer mt-auto py-3 bg-light">
@@ -73,11 +95,6 @@
 </footer>
 
 
-
-</body>
-<body>
-
-</form>
 
 </body>
 </html>
